@@ -1,0 +1,21 @@
+base_model: "mistralai/mistral-7b-v0.1"  # check for trainable models
+adapter: "lora"
+
+dataset:
+  - path: "data/nips_dataset.jsonl"
+  - prompt_template: "Question: {question}\nAnswer: {answer}"
+  - max_length: 512
+  - batch_size: 4
+  - num_epochs: 3
+  - learning_rate: 2e-5
+  - weight_decay: 0.01
+  - warmup_steps: 500
+  - logging_steps: 100
+  - save_steps: 1000
+  - output_dir: "output/nips_fine_tuned_model"
+
+scraping:
+  min_heading_length: 3
+  output:
+    jsonl: "data/nips_dataset.jsonl"
+    csv: "data/nips_dataset.csv"
