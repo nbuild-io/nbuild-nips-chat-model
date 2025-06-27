@@ -5,7 +5,7 @@ import logging
 logger = logging.getLogger(__name__)
 logging.basicConfig(filename="api.log", level=logging.INFO)
 
-EXTERNAL_REPLICATE_TOKEN = os.getenv("EXTERNAL_REPLICATE_TOKEN")
+REPLICATE_API_TOKEN = os.getenv("REPLICATE_API_TOKEN")
 
 
 class ReplicateAPI:
@@ -19,8 +19,8 @@ class ReplicateAPI:
             model_version (str): Replicate model version ID
         """
         self.model_version = model_version
-        if not EXTERNAL_REPLICATE_TOKEN:
-            raise ValueError("EXTERNAL_REPLICATE_TOKEN environment variable not set.")
+        if not REPLICATE_API_TOKEN:
+            raise ValueError("REPLICATE_API_TOKEN environment variable not set.")
 
     def ask(self, question: str, context: str) -> str:
         """

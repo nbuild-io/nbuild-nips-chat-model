@@ -18,7 +18,7 @@ def run_cli() -> None:
     while True:
         user_q = input("\nYour question: ")
         if user_q.lower() == "exit":
-            print("Goodbye, thank you for using NIPS Chat!")
+            print("Goodbye, thank you for using the NIPS Chat!")
             break
         try:
             retrieved = qa_system.retrieve_top_k(user_q, k=3)
