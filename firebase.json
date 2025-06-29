@@ -1,0 +1,15 @@
+{
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "nbuild-nips-chat-model",
+      "ignore": [
+        "venv",
+        ".git",
+        "*.log",
+        "*.local"
+      ],
+      "runtime": "python313"
+    }
+  ]
+}
