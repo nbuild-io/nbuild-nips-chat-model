@@ -15,7 +15,7 @@ You can [open a ticket here](https://github.com/nbuild-io/nbuild-nips-chat-model
 ```bash
 pip3 install pipenv
 pipenv shell
-REPLICATE_API_TOKEN="<token from replicate.com account>" uvicorn nips_chat_api.chat_api:app --reload
+REPLICATE_API_TOKEN="<token from replicate.com account>" uvicorn --app-dir="src" nips_chat_api.chat_api:app --reload
 ```
 
 ### Using CURL to get a Q answered

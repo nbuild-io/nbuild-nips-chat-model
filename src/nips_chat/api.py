@@ -36,9 +36,9 @@ class ReplicateAPI:
         prompt = f"""[INST] <<SYS>>You are a helpful assistant answering questions about NIPS documentation.<</SYS>>
 
         Question: {question}
-  
+
         Context: {context}
-  
+
         Answer:
         [/INST]"""
 
@@ -107,3 +107,27 @@ class ReplicateAPI:
         except Exception as e:
             logger.error(f"Error calling Replicate API: {str(e)}")
             return "Error: Failed to call Replicate API."
+
+    def run_stream(self, full_prompt: str):
+        """
+        Run a full prompt through the model with streaming output.
+
+        Args:
+            full_prompt (str): The full prompt to send.
+
+        Yields:
+            str: Streaming output from the model.
+        """
+        try:
+            iterator = replicate.run(
+              self.model_version,
+              input={"prompt": full_prompt, "max_new_tokens": 512},
+              stream=True
+            )
+
+            for text in iterator:
+                yield text
+
+        except Exception as e:
+            logger.error(f"Error calling Replicate API for streaming: {str(e)}")
+            yield "Error: Failed to call Replicate API."
