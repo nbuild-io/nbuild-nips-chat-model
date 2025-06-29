@@ -1,6 +1,6 @@
-# NBuild.io NIPs Chatbot Model
+# NBuild.io NIPs Chatbot RAG Model
 
-NBuild.io chatbot model is using RAG-based Question and Answering over NIPs docs. [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3).
+NBuild.io chatbot is using RAG-based question answering over NIPs docs. [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3).
 
 ## Official Nostr Sources used by RAG
 
