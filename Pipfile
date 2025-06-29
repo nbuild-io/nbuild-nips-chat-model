@@ -10,12 +10,14 @@ pydantic = "*"
 replicate = "*"
 sentence-transformers = "*"
 faiss-cpu = "*"
+firebase-functions = "*"
+firebase-admin = "*"
 yapf = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.12"
+python_version = "3.13"
 
 [pipenv]
 allow_prereleases = true
