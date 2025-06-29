@@ -10,6 +10,7 @@ pydantic = "*"
 replicate = "*"
 sentence-transformers = "*"
 faiss-cpu = "*"
+yapf = "*"
 
 [dev-packages]
 

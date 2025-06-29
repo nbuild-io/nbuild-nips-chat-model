@@ -2,6 +2,18 @@
 
 NBuild.io chatbot is using RAG-based question answering over NIPs docs. [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3).
 
+## Formatter: Google Yapf
+
+Before you start coding, you must install Yapf to active code formatting.
+
+[Visual Studio Code: Google Yapf Extension](https://marketplace.visualstudio.com/items?itemName=eeyore.yapf)
+
+```bash
+pip install yapf
+```
+
+> You should check which Python installation is active in Visual Studio Code or Cursor.
+
 ## Official Nostr Sources used by RAG
 
 - [GitHub nostr-protocol/nips](https://github.com/nostr-protocol/nips)
