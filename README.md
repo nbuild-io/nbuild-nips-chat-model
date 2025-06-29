@@ -26,3 +26,11 @@ curl -X "POST" "http://127.0.0.1:8000/predict" \
   "user_q": "Describe what Nostr is?"
 }'
 ```
+
+## Start RAG-based Chatbot CLI locally
+
+You could also chat with NBuild.io Chatbot via a terminal. We prefer this when improving the RAG-based chatbot and its Nostr and NIPs knowledge.
+
+```bash
+REPLICATE_API_TOKEN="<token from replicate.com account>" python3 src/nips_chat/chat_cli.py
+```
