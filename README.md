@@ -2,6 +2,16 @@
 
 NBuild.io chatbot is using RAG-based question answering over NIPs docs. [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3).
 
+## Python
+
+Since many Python versions may be installed, you must check that Python 3.13 and pip are installed correctly.
+
+```bash
+python3 --version
+python3 -m ensurepip
+python3 -m pip --version
+```
+
 ## Formatter: Google Yapf
 
 Before you start coding, you must install Yapf to active code formatting.
@@ -9,7 +19,7 @@ Before you start coding, you must install Yapf to active code formatting.
 [Visual Studio Code: Google Yapf Extension](https://marketplace.visualstudio.com/items?itemName=eeyore.yapf)
 
 ```bash
-pip install yapf
+python3 -m pip install yapf
 ```
 
 > You should check which Python installation is active in Visual Studio Code or Cursor.
@@ -25,7 +35,7 @@ You can [open a ticket here](https://github.com/nbuild-io/nbuild-nips-chat-model
 ## Start RAG-based Chatbot API locally
 
 ```bash
-pip3 install pipenv
+python3 -m pip install pipenv
 pipenv shell
 REPLICATE_API_TOKEN="<token from replicate.com account>" uvicorn --app-dir="src" nips_chat_api.chat_api:app --reload
 ```
