@@ -2,14 +2,16 @@
 
 NBuild.io chatbot is using RAG-based question answering over NIPs docs. [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3).
 
-## Python
+## Install Python and Tools
 
-Since many Python versions may be installed, you must check that Python 3.13 and pip are installed correctly.
+Since many Python versions may be installed, you must check that Python 3.13, pip and pipenv are installed correctly.
 
 ```bash
 python3 --version
 python3 -m ensurepip
 python3 -m pip --version
+python3 -m pip install pipenv
+python3 -m pipenv --version
 ```
 
 ## Formatter: Google Yapf
@@ -37,10 +39,11 @@ You can [open a ticket here](https://github.com/nbuild-io/nbuild-nips-chat-model
 ```bash
 python3 -m pip install pipenv
 pipenv shell
-REPLICATE_API_TOKEN="<token from replicate.com account>" uvicorn --app-dir="src" nips_chat_api.chat_api:app --reload
+REPLICATE_API_TOKEN="<token from replicate.com account>" TOKENIZERS_PARALLELISM=false uvicorn --app-dir="src" nips_chat_api.chat_api:app --reload
 ```
 
 ### Using CURL to get a Q answered
+
 ```bash
 curl -X "POST" "http://127.0.0.1:8000/predict" \
      -H 'Content-Type: application/json; charset=utf-8' \
@@ -55,4 +58,7 @@ You could also chat with NBuild.io Chatbot via a terminal. We prefer this when i
 
 ```bash
 REPLICATE_API_TOKEN="<token from replicate.com account>" python3 src/nips_chat/chat_cli.py
+```
+firebase login
+firebase deploy --only functions
 ```
