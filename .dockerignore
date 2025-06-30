@@ -1,0 +1,10 @@
+.vscode
+.editorconfig
+README.md
+.git
+.gitignore
+src/
+!src/nips_chat_api/
+!src/nips_chat/__init__.py
+!src/nips_chat/api.py
+!src/nips_chat/qa_nips.py
